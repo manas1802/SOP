@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP Creator - Recording</title>
+    <link rel="stylesheet" href="recording.css" />
+  </head>
+  <body>
+    <div id="recording-app">
+      <!-- Header -->
+      <div class="recording-header">
+        <div class="header-content">
+          <div class="app-info">
+            <div class="app-logo">
+              <div class="logo-icon">S</div>
+              <span>SOP Creator</span>
+            </div>
+            <div class="recording-badge">
+              <div class="pulse-dot"></div>
+              <span>Recording</span>
+            </div>
+          </div>
+
+          <div class="recording-timer">
+            <span id="timer">00:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="recording-content">
+        <!-- Instructions -->
+        <div class="instructions-card">
+          <h2>Now capturing your browser</h2>
+          <p>
+            Navigate through your process naturally. Click elements, fill forms,
+            and speak clearly to describe each step.
+          </p>
+        </div>
+
+        <!-- Live Stats -->
+        <div class="stats-grid">
+          <!-- Your existing stats -->
+          <div class="stat-card">
+            <div class="stat-value" id="clicks-count">0</div>
+            <div class="stat-label">Clicks Captured</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value" id="steps-count">0</div>
+            <div class="stat-label">Steps Recorded</div>
+          </div>
+
+          <!-- NEW: Add streaming-specific stats -->
+          <div class="stat-card">
+            <div class="stat-value" id="chunks-count">0</div>
+            <div class="stat-label">Chunks Processed</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value" id="upload-progress">0/0</div>
+            <div class="stat-label">Uploaded</div>
+          </div>
+        </div>
+        <div class="upload-progress-section">
+          <h4>Upload Progress</h4>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div
+                class="progress-fill"
+                id="upload-progress-bar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <div class="progress-text" id="upload-progress-text">
+              Ready to upload
+            </div>
+          </div>
+        </div>
+        <!-- Live Activity Feed -->
+        <div class="activity-section">
+          <h3>Live Activity</h3>
+          <div class="activity-feed" id="activity-feed">
+            <div class="activity-item start-item">
+              <div class="activity-time">00:00</div>
+              <div class="activity-icon start">▶️</div>
+              <div class="activity-text">Recording started</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls-section">
+          <button id="pause-btn" class="control-btn pause-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+            <span>Pause</span>
+          </button>
+
+          <button id="stop-btn" class="control-btn stop-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="6" width="12" height="12"></rect>
+            </svg>
+            <span>Stop</span>
+          </button>
+
+          <button id="complete-btn" class="control-btn complete-btn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="20,6 9,17 4,12"></polyline>
+            </svg>
+            <span>Complete</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Processing Overlay -->
+      <div class="processing-overlay" id="processing-overlay">
+        <div class="processing-content">
+          <div class="processing-spinner"></div>
+          <h2>Processing Your Recording</h2>
+          <p id="processing-status">Analyzing captured data...</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="processing-stats">
+            <div class="stat">
+              <span class="stat-number" id="final-duration">0s</span>
+              <span class="stat-label">Duration</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="final-clicks">0</span>
+              <span class="stat-label">Actions</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="final-steps">0</span>
+              <span class="stat-label">Steps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="recording.js"></script>
+  </body>
+</html>

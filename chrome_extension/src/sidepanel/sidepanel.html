@@ -1,149 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOP Creator</title>
-    <link rel="stylesheet" href="sidepanel.css">
-</head>
-<body>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
     <div id="app">
-        <!-- Start View: Before Recording -->
-        <div id="start-view" class="view active">
-            <!-- Header -->
-            <div class="header">
-                <div class="app-brand">
-                    <div class="app-icon">S</div>
-                    <h1>SOP Creator</h1>
-                </div>
-                <div class="settings-icon">⚙️</div>
-            </div>
-            
-            <!-- User Profile -->
-            <div class="user-profile">
-                <div class="user-info">
-                    <div class="user-avatar">
-                        <span>JD</span>
-                    </div>
-                    <div class="user-details">
-                        <h3>John Doe</h3>
-                        <div class="dropdown-arrow">▼</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Main Capture Button -->
-            <div class="capture-section">
-                <button id="start-capture-btn" class="main-capture-button">
-                    <div class="capture-icon">⚫</div>
-                    <span>Start Capture</span>
-                </button>
-            </div>
-            
-            <!-- Instructions -->
-            <div class="instructions-section">
-                <div class="instruction-card">
-                    <div class="card-icon">📋</div>
-                    <div class="card-content">
-                        <h4>Create SOP for this workflow</h4>
-                        <p>Record your screen and actions to generate step-by-step procedures.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bottom Button -->
-            <div class="bottom-section">
-                <button id="bottom-capture-btn" class="bottom-capture-button">
-                    Start Capture
-                </button>
-            </div>
+      <!-- Start View: Before Recording -->
+      <div id="start-view" class="view active">
+        <!-- Header -->
+        <div class="header">
+          <div class="app-brand">
+            <div class="app-icon">S</div>
+            <h1>SOP Creator</h1>
+          </div>
+          <div class="settings-icon">⚙️</div>
         </div>
 
-        <!-- Recording View: During Recording -->
-        <div id="recording-view" class="view">
-            <!-- Recording Header -->
-            <div class="recording-header">
-                <div class="recording-indicator">
-                    <div class="pulse-dot"></div>
-                    <span>Recording in progress</span>
-                </div>
-                <div class="recording-timer">
-                    <span id="timer">00:00</span>
-                </div>
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-info">
+            <div class="user-avatar">
+              <span>JD</span>
             </div>
-            
-            <!-- Recording Status -->
-            <div class="recording-status">
-                <div class="status-message">
-                    <h3>Recording your workflow</h3>
-                    <p>Navigate through your process naturally</p>
-                </div>
+            <div class="user-details">
+              <h3>John Doe</h3>
+              <div class="dropdown-arrow">▼</div>
             </div>
-            
-            <!-- Live Stats -->
-            <div class="live-stats">
-                <div class="stat-item">
-                    <div class="stat-icon">👆</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="click-count">0</span>
-                        <span class="stat-label">Clicks</span>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">📷</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="screenshot-count">0</span>
-                        <span class="stat-label">Screenshots</span>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">🎤</div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="audio-level">0%</span>
-                        <span class="stat-label">Audio</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Live Steps -->
-            <div class="steps-container">
-                <h4>Captured Steps</h4>
-                <div class="steps-list" id="steps-list">
-                    <!-- Steps will be added dynamically -->
-                </div>
-            </div>
-            
-            <!-- Recording Controls -->
-            <div class="recording-controls">
-                <button id="pause-btn" class="control-btn">
-                    <span id="pause-icon">⏸️</span>
-                </button>
-                <button id="stop-btn" class="control-btn stop">
-                    <span>⏹️</span>
-                </button>
-            </div>
-            
-            <!-- Complete Button -->
-            <div class="complete-section">
-                <button id="complete-btn" class="complete-button">
-                    ✓ Complete & Generate SOP
-                </button>
-            </div>
+          </div>
         </div>
 
-        <!-- Processing Overlay -->
-        <div id="processing-overlay" class="processing-overlay" style="display: none;">
-            <div class="processing-content">
-                <div class="processing-spinner"></div>
-                <h3>Processing Your Recording</h3>
-                <p id="processing-status">Preparing data...</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-            </div>
+        <!-- Main Capture Button -->
+        <div class="capture-section">
+          <button id="start-capture-btn" class="main-capture-button">
+            <div class="capture-icon">⚫</div>
+            <span>Start Capture</span>
+          </button>
         </div>
+
+        <!-- Instructions -->
+        <div class="instructions-section">
+          <div class="instruction-card">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h4>Create SOP for this workflow</h4>
+              <p>
+                Record your screen and actions to generate step-by-step
+                procedures.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Button -->
+        <div class="bottom-section">
+          <button id="bottom-capture-btn" class="bottom-capture-button">
+            Start Capture
+          </button>
+        </div>
+      </div>
+
+      <!-- Recording View: During Recording -->
+      <div id="recording-view" class="view">
+        <!-- Recording Header -->
+        <div class="recording-header">
+          <div class="recording-indicator">
+            <div class="pulse-dot"></div>
+            <span>Recording in progress</span>
+          </div>
+          <div class="recording-timer">
+            <span id="timer">00:00</span>
+          </div>
+        </div>
+
+        <!-- Recording Status -->
+        <div class="recording-status">
+          <div class="status-message">
+            <h3>Recording your workflow</h3>
+            <p>Navigate through your process naturally</p>
+          </div>
+        </div>
+
+        <!-- Live Stats -->
+        <div class="live-stats">
+          <div class="stat-item">
+            <div class="stat-icon">👆</div>
+            <div class="stat-info">
+              <span class="stat-number" id="click-count">0</span>
+              <span class="stat-label">Clicks</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">📷</div>
+            <div class="stat-info">
+              <span class="stat-number" id="screenshot-count">0</span>
+              <span class="stat-label">Screenshots</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🎤</div>
+            <div class="stat-info">
+              <span class="stat-number" id="audio-level">0%</span>
+              <span class="stat-label">Audio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Steps -->
+        <div class="steps-container">
+          <h4>Captured Steps</h4>
+          <div class="steps-list" id="steps-list">
+            <!-- Steps will be added dynamically -->
+          </div>
+        </div>
+
+        <!-- Recording Controls -->
+        <div class="recording-controls">
+          <button id="pause-btn" class="control-btn">
+            <span id="pause-icon">⏸️</span>
+          </button>
+          <button id="stop-btn" class="control-btn stop">
+            <span>⏹️</span>
+          </button>
+        </div>
+
+        <!-- Complete Button -->
+        <div class="complete-section">
+          <button id="complete-btn" class="complete-button">
+            ✓ Complete & Generate SOP
+          </button>
+        </div>
+      </div>
+
+      <!-- Processing Overlay -->
+      <div
+        id="processing-overlay"
+        class="processing-overlay"
+        style="display: none"
+      >
+        <div class="processing-content">
+          <div class="processing-spinner"></div>
+          <h3>Processing Your Recording</h3>
+          <p id="processing-status">Preparing data...</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="../services/OptimizedRecordingService.js"></script>
 
     <script src="sidepanel.js"></script>
-</body>
+  </body>
 </html>

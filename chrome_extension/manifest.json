@@ -1,29 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "SOP Creator",
-  "version": "1.0.0",
-  "description": "Create Standard Operating Procedures by recording screen activity and audio",
+  "name": "SOP Creator - Optimized",
+  "version": "2.0.0",
+  "description": "Memory-optimized SOP creation with streaming video",
   "permissions": [
     "sidePanel",
     "storage",
     "tabs",
     "scripting",
     "desktopCapture",
-    "activeTab",
-    "background"
+    "activeTab"
   ],
   "host_permissions": [
     "http://*/*",
     "https://*/*"
   ],
-  "side_panel": {
-    "default_path": "src/sidepanel/sidepanel.html"
-  },
-  "action": {
-    "default_title": "SOP Creator",
-    "default_icon": "assets/icons/icon.png",
-    "default_popup": "src/popup/popup.html"
-  },
   "background": {
     "service_worker": "background.js"
   },
@@ -33,29 +24,15 @@
       "js": [
         "src/shared/constants.js",
         "src/shared/utils.js",
-        "src/content-scripts/click-tracker.js"
+        "src/content-scripts/optimized-click-tracker.js"
       ],
-      "run_at": "document_end",
-      "all_frames": false
+      "run_at": "document_end"
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "src/recording/*",
-        "src/services/*",
-        "src/shared/*"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  ],
-  "icons": {
-    "16": "assets/icons/icon-16.png",
-    "32": "assets/icons/icon-32.png", 
-    "48": "assets/icons/icon-48.png",
-    "128": "assets/icons/icon-128.png"
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
   },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self';"
+  "action": {
+    "default_title": "SOP Creator"
   }
 }
